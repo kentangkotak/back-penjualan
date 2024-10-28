@@ -18,7 +18,7 @@ class ProdukController extends Controller
 
     public function simpan(Request $request)
     {
-        //untuk menyimpan master produk
+        //untuk menyimpan gambar
         $files = $request->file('photos');
         for ($i = 0; $i < count($files); $i++) {
             $file = $files[$i];
@@ -27,7 +27,7 @@ class ProdukController extends Controller
             $path = $file->storeAs('images/produk', $penamaan);
             $file->move(public_path('images/produk'), $penamaan);
         }
-
+        //untuk menyimpan master produk
         $simpan = Poduk::updateOrCreate(
             [
                 'id' => $request->id

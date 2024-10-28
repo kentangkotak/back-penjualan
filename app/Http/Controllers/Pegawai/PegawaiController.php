@@ -11,7 +11,9 @@ class PegawaiController extends Controller
 {
     public function getpegawai()
     {
+        //menampilkan data pegawai
         $data = User::all();
         return new JsonResponse($data);
     }
+
 }
