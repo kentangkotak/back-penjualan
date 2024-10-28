@@ -11,15 +11,14 @@ class ProdukController extends Controller
 {
     public function getproduk()
     {
+        //untuk menampilkan master produk
         $data = Poduk::all();
         return new JsonResponse($data);
     }
 
     public function simpan(Request $request)
     {
-        // $filename = time() . '.' . $request->photos->extension();
-
-        // $request->photos->move(public_path('images/produk'), $filename);
+        //untuk menyimpan master produk
         $files = $request->file('photos');
         for ($i = 0; $i < count($files); $i++) {
             $file = $files[$i];
