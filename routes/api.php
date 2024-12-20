@@ -32,4 +32,9 @@ Route::prefix('produk')->group(function() {
     RouteHelper::includeRouteFiles(__DIR__ . '/produk');
 });
 
+Route::prefix('penjualan')->group(function() {
+    RouteHelper::includeRouteFiles(__DIR__ . '/penjualan');
+});
+
+
 
